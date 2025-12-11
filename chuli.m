@@ -10,10 +10,10 @@ stuct_name =  'Data';
 raw_temp_data = load ([data_path ,file_name_target,'001']);
 raw_temp_data = raw_temp_data.data;
 fs_raw = 500;
-fs_down = 250; %降采样后采样率
+fs_down = 256; %降采样后采样率
 subject_num = [1;122];
 temp_abandon = 20; %去掉的暂态，以秒为单位
-epoch_length = 2.048;
+epoch_length = 512;
 perocess_channel = [1 ; 64];
 %% 1.Standard_input
 % 0.1 rest_data 输入数据格式为：通道数*采样点数
@@ -95,5 +95,6 @@ for sub_loop = subject_num(1,1):subject_num(2,1)
 end
 fprintf('\n');
 end
+
 
 
